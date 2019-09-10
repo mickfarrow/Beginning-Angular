@@ -1,0 +1,81 @@
+<div>{{errorMessage}}</div>
+<div class="container">
+    <div class="row">
+      <div class="col-sm-12">
+        <span class="pull-right"><pm-star [rating]='3.5' (ratingClicked)='onRatingClicked($event)'></pm-star></span>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-4">
+      <div class="panel panel-default">
+          <div class="panel-heading"><h4>Dive {{dive.id}}</h4></div>
+        <div class="panel-body">Date - {{dive.date | date :'EEEE dd MMM yyyy'}}</div>
+        <div class="panel-body">Time at descent - {{dive.timeIn}}</div>
+        <div class="panel-body">Time at surface - {{dive.timeOut}}</div>
+        <div class="panel-body">Duration - {{dive.minutes}} Minutes</div>
+        <div class="panel-body">Depth - {{dive.maxDepthFt}}ft ({{dive.maxDeptM | number : '1.1-1'}}M)</div>
+        <div class="panel-body">Temp - 82F (27C)</div>
+      </div>
+    </div>
+      <div class="col-sm-8">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>{{dive.location}}</h4></div>
+        <div class="panel-body">George Town, Grand Cayman, BWI</div>
+        <div>
+        <div class="mapouter"><div class="gmap_canvas"><iframe id="gmap_canvas" width="100%" src="https://maps.google.com/maps?q=grand%20cayman&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe></div>
+        </div>
+        <div class="panel-footer">18 times</div>
+      </div>
+      </div>
+    </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="panel panel-default">
+          <div class="panel-heading"><h4>Observations</h4></div>
+          <div class="panel-body">{{dive.notes}}</div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+      <div class="panel panel-default">
+        <div class="panel-heading"><h4>Marine Life</h4></div>
+        <div class="panel-body">
+        <div class="row">
+          <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/w3images/lights.jpg">
+            <img src="https://reefguide.org/pix/foureyebutterflyfish13.jpg" alt="Lights" style="width:100%">
+            <div class="caption">
+              <p>Four Eye Butterflyfish</p>
+            </div>
+            </a>
+          </div>
+          </div>
+          <div class="col-md-4">
+          <div class="thumbnail">
+            <a href="/w3images/nature.jpg">
+            <img src="https://reefguide.org/pix/bluestripedgrunt8.jpg" alt="Nature" style="width:100%">
+            <div class="caption">
+              <p>Blue Striped Grunt</p>
+            </div>
+            </a>
+          </div>
+          </div>
+          <div class="col-md-4">
+      <div class="thumbnail">
+        <a href="/w3images/fjords.jpg">
+        <img src="https://reefguide.org/pix/honeycomb8.jpg" alt="Fjords" style="width:100%">
+        <div class="caption">
+          <p>Honeycomb Cowfish</p>
+        </div>
+        </a>
+      </div>
+      </div>
+  </div>
+        </div>
+      </div>
+    </div>
+    </div>
+  </div>

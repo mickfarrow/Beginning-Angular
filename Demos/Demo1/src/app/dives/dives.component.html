@@ -1,0 +1,50 @@
+<div class='card'>
+  <div class='card-header'>
+    {{pageTitle}}
+  </div>
+  <div><a href="dives/newdive">Add Dive</a></div>
+  <div class='card-body'>
+    <div class='row'>
+      <div class='col-md-2'>Filter by:</div>
+      <div class='col-md-4'>
+        <input type='text' [(ngModel)] = 'listFilter' />
+      </div>
+    </div>
+    <div class='row'
+         *ngIf='listFilter'>
+      <div class='col-md-6'>
+        <h4>Filtered by: {{listFilter}}</h4>
+      </div>
+    </div>
+    <div class='table-responsive'>
+      <table class='table' *ngIf='dives && dives.length'>
+        <thead>
+          <tr>
+            <th>Dive</th>
+            <th>Date</th>
+            <th>Location</th>
+            <th>Depth</th>
+            <th>Rating</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor='let dive of filteredDives'>
+              <td>
+                  <a [routerLink]="['/dives', dive.id]">
+                    {{ dive.id }}
+                  </a>
+                </td>
+            <td>{{dive.date|date}}</td>  
+            <td>{{dive.location}}</td>
+            <td>{{dive.maxDepthFt}}</td>
+            <td><pm-star [rating]='4' (ratingClicked)='onRatingClicked($event)'></pm-star></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+<div *ngIf='errorMessage'
+     class='alert alert-danger'>
+  Error: {{ errorMessage }}
+</div>
