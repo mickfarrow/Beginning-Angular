@@ -9,6 +9,7 @@ import { SportComponent } from './sport/sport.component';
 import { UnitedkingdomComponent } from './unitedkingdom/unitedkingdom.component';
 import { BusinessComponent } from './business/business.component';
 import { PoliticsComponent } from './politics/politics.component';
+import { PagenotfoundComponent } from './pagenotfound/pagenotfound.component';
 
 @NgModule({
   imports: [BrowserModule, FormsModule, HttpClientModule, RouterModule.forRoot([
@@ -17,10 +18,11 @@ import { PoliticsComponent } from './politics/politics.component';
     { path: 'business', component: BusinessComponent },
     { path: 'politics', component: PoliticsComponent },
     { path: 'sport', component: SportComponent },
+    { path: 'pagenotfound', component: PagenotfoundComponent },
     { path: '', redirectTo: 'welcome', pathMatch: 'full' },
-    { path: '**', redirectTo: 'welcome', pathMatch: 'full' }])
+    { path: '**', redirectTo: 'pagenotfound', pathMatch: 'full' }])
   ],
-  declarations: [AppComponent, WelcomeComponent, SportComponent, UnitedkingdomComponent, BusinessComponent, PoliticsComponent],
+  declarations: [AppComponent, WelcomeComponent, SportComponent, UnitedkingdomComponent, BusinessComponent, PoliticsComponent, PagenotfoundComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
