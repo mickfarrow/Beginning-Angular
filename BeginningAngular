@@ -1,0 +1,60 @@
+Root
+Main.ts
+This is the start point of the application, it performs the application bootstrap, and tells angular which module is the start up module
+
+platformBrowserDynamic().bootstrapModule(AppModule)
+  .catch(err => console.error(err));
+  
+App.Module.ts
+Main application module, this is where we can globally import and load components.
+Also this is where we place our routing code.
+We specify the page to show when none is specified, and also when a page is not found.
+
+Index.html
+HTML5 page markup, with a <app-root></app-root> declaration.
+
+App.Component.ts
+This is where we declare the component at the app (root) level.
+
+import { Component } from "@angular/core";
+
+@Component({
+selector: 'app-root',
+templateUrl: './app.component.html',
+styleUrls: ['./app.component.css']
+})
+export class AppComponent{
+  pageTitle = 'Demo Angular Application';
+}
+
+app.component.html
+contains the Html that will be rendered by Angular in place of the <app-root> declaration.
+
+Add Routing
+
+import { RouterModule } from '@angular/router';
+
+,RouterModule.forRoot([
+   
+    { path: 'welcome', component: WelcomeComponent },
+    { path: '', redirectTo: 'welcome', pathMatch: 'full' },
+    { path: '**', redirectTo: 'welcome', pathMatch: 'full' }])
+	
+<div class="container">
+  <div class="jumbotron1 text-center">
+    <h1>{{pageTitle}}</h1>
+    <p>{{pageSubTitle}}</p> 
+  </div>
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+    <ul class='nav nav-pills'>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>     
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/uk']">UK</a></li>      
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/business']">Business</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/politics']">Politics</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/sport']">Sport</a></li>
+    </ul>
+  </nav>
+  <div class='container'>
+    <router-outlet></router-outlet>
+  </div>
+</div>
