@@ -1,0 +1,18 @@
+<div class="container">
+  <div class="jumbotron1 text-center">
+    <h1>Demo - Mick Farrow</h1>
+    <p>Responsive application written in Angular</p> 
+  </div>
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+    <ul class='nav nav-pills'>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/welcome']">Home</a></li>      
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/uk']">UK</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/business']">Business</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/politics']">Politics</a></li>
+      <li><a class='nav-link' routerLinkActive='active' [routerLink]="['/sport']">Sport</a></li>
+    </ul>
+  </nav>
+  <div class='container'>
+    <router-outlet></router-outlet>
+  </div>
+</div>
