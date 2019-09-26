@@ -7,3 +7,6 @@
 1. Type in: > ng new Demo1
 1. Answer yes to configure routing, and then select your css precompiler
 1. Sit back and watch as the cli builds your app
+1. Type in: > cd src/app
+1. Type in: > ng serve -o
+1. The app should now run up in your browser
