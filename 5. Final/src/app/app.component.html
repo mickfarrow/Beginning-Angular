@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="jumbotron1 text-center">
+    <h1>Demo - Mick Farrow</h1>
+    <p>Responsive application written in Angular</p> 
+  </div>
+  <nav class='navbar navbar-expand navbar-light bg-light'>
+    <ul class='nav nav-pills' *ngFor='let menu of menuItems'>
+      <li><a class='nav-link' routerLinkActive='active' routerLink={{menu.link}}>{{menu.text}}</a></li>
+    </ul>
+  </nav>
+  <div class='container'>
+    <router-outlet></router-outlet>
+  </div>
+</div>
